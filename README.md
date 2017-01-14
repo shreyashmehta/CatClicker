@@ -1,2 +1,2 @@
 # CatClicker
-Count the number of clicks on a particular cat using KnockoutJS
+Open the index.html file, select a partcular cat, click and see the count
