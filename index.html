@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Cat Clicker Premium</title>
+</head>
+<body>
+	<div>
+		<ul data-bind="foreach: catList">
+			<li data-bind="text: name, click: $parent.setCat"></li>
+		</ul>
+
+	<div data-bind="with: currentCat">
+		<!--whatever the name property is in our ViewModel, 
+		that's what the text of h2 gets set to-->
+		<h1 data-bind="text: name"></h1>
+		<!--we put parentheses after currentCat because it is actually a KO observable
+		in order to get that we need to run that function-->
+		<h2 data-bind="text: level"></h2>
+		<div data-bind="text: clickCount"></div>
+		<img src="" alt="cute cat" data-bind="click: $parent.increamentCounter, attr: {src: imgSrc}">
+		<!--these bindings are the things that are connecting up the view and the model,
+		and knockout is taking care of all the connections-->
+		<h3>Nick Names</h3>
+		<ul data-bind="foreach: nicknames">
+			<li>
+				<span data-bind="text: $data"></span>
+			</li>
+		</ul>
+	</div>
+	<script type="text/javascript" src="knockout-3.4.1.js"></script>
+	<script type="text/javascript" src="app.js"></script>
+</body>
+</html>
